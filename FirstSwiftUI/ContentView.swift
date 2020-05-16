@@ -8,7 +8,12 @@
 
 import SwiftUI
 
+struct Obj {
+    public var isVisible = true
+}
 struct ContentView: View {
+    @State var obj = Obj()
+    @State var alertVisible : Bool = false
     var body: some View {
         VStack {
             Text("Welcome to my first app")
@@ -18,8 +23,13 @@ struct ContentView: View {
             
             Button(action: {
                 print("Button Pressed")
+                self.alertVisible = true
+                self.obj.isVisible = !self.obj.isVisible
             }) {
                 Text("Hit me")
+            }
+            .alert(isPresented: $obj.isVisible) { () -> Alert in
+                return Alert(title: Text("Hello There"), message: Text("My First Alert"), dismissButton: .default(Text("Awesome")))
             }
         }
         
