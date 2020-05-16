@@ -28,7 +28,7 @@ struct ContentView: View {
             }) {
                 Text("Hit me")
             }
-            .alert(isPresented: $obj.isVisible) { () -> Alert in
+            .alert(isPresented: $alertVisible) { () -> Alert in
                 return Alert(title: Text("Hello There"), message: Text("My First Alert"), dismissButton: .default(Text("Awesome")))
             }
         }
