@@ -14,6 +14,7 @@ struct Obj {
 struct ContentView: View {
     @State var obj = Obj()
     @State var alertVisible : Bool = false
+    @State var knockVisible : Bool = false
     var body: some View {
         VStack {
             Text("Welcome to my first app")
@@ -31,9 +32,18 @@ struct ContentView: View {
             .alert(isPresented: $alertVisible) { () -> Alert in
                 return Alert(title: Text("Hello There"), message: Text("My First Alert"), dismissButton: .default(Text("Awesome")))
             }
-        }
+            
+            Button(action: {
+                print("Knock Knock")
+                self.knockVisible = true
+            }) {
+                Text("Knock Knock")
+            }.alert(isPresented: $knockVisible) { () -> Alert in
+                return Alert(title: Text("Knock Knock"), message: Text("Who is there?"), dismissButton: .default(Text("This is CountryBall")))
+            }
         
     }
+}
 }
 
 struct ContentView_Previews: PreviewProvider {
