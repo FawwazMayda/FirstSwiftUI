@@ -14,6 +14,7 @@ struct Obj {
 struct ContentView: View {
     @State var obj = Obj()
     @State var alertVisible : Bool = false
+    @State var sliderValue : Double = 10.0
     @State var knockVisible : Bool = false
     var body: some View {
         VStack {
@@ -27,7 +28,7 @@ struct ContentView: View {
             //Slider Row
             HStack {
                 Text("1")
-                Slider(value: .constant(57))
+                Slider(value: self.$sliderValue, in: 1...100)
                 Text("100")
             }
             
@@ -40,7 +41,8 @@ struct ContentView: View {
                 Text("Hit me")
             }
             .alert(isPresented: $alertVisible) { () -> Alert in
-                return Alert(title: Text("Hello There"), message: Text("My First Alert"), dismissButton: .default(Text("Awesome")))
+                let valueOfSlider = Int(sliderValue.rounded())
+                return Alert(title: Text("Hello There"), message: Text("The slider value is :\(valueOfSlider)"), dismissButton: .default(Text("Awesome")))
             }
             
             //Score row
