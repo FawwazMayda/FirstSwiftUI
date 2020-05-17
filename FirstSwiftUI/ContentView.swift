@@ -17,11 +17,21 @@ struct ContentView: View {
     @State var knockVisible : Bool = false
     var body: some View {
         VStack {
-            Text("Welcome to my first app")
-                .fontWeight(.semibold)
-                .foregroundColor(.green)
             
+            //Target Row
+            HStack {
+                Text("Put the bulleye as close ad you can:")
+                Text("100")
+
+            }
+            //Slider Row
+            HStack {
+                Text("1")
+                Slider(value: .constant(57))
+                Text("100")
+            }
             
+            //Button Row
             Button(action: {
                 print("Button Pressed")
                 self.alertVisible = true
@@ -32,15 +42,6 @@ struct ContentView: View {
             .alert(isPresented: $alertVisible) { () -> Alert in
                 return Alert(title: Text("Hello There"), message: Text("My First Alert"), dismissButton: .default(Text("Awesome")))
             }
-            
-            Button(action: {
-                print("Knock Knock")
-                self.knockVisible = true
-            }) {
-                Text("Knock Knock")
-            }.alert(isPresented: $knockVisible) { () -> Alert in
-                return Alert(title: Text("Knock Knock"), message: Text("Who is there?"), dismissButton: .default(Text("This is CountryBall")))
-            }
         
     }
 }
@@ -48,6 +49,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().previewLayout(.fixed(width: 896, height: 414))
     }
 }
