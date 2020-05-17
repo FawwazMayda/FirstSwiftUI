@@ -16,13 +16,14 @@ struct ContentView: View {
     @State var alertVisible : Bool = false
     @State var sliderValue : Double = 10.0
     @State var knockVisible : Bool = false
+    @State var target = Int.random(in: 1...100)
     var body: some View {
         VStack {
             
             //Target Row
             HStack {
                 Text("Put the bulleye as close ad you can:")
-                Text("100")
+                Text("\(target)")
 
             }
             //Slider Row
