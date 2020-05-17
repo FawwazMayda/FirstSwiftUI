@@ -48,15 +48,17 @@ struct ContentView: View {
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     Text("Start Over")
                 }
+                Spacer()
                 Text("Score")
                 Text("999")
+                Spacer()
                 Text("Round")
                 Text("999")
+                Spacer()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     Text("Info")
                 }
-            }
-        
+            }.padding(.all, 20.0)
     }
 }
 }
