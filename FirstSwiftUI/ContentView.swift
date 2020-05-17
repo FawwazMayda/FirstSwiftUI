@@ -42,6 +42,20 @@ struct ContentView: View {
             .alert(isPresented: $alertVisible) { () -> Alert in
                 return Alert(title: Text("Hello There"), message: Text("My First Alert"), dismissButton: .default(Text("Awesome")))
             }
+            
+            //Score row
+            HStack {
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Text("Start Over")
+                }
+                Text("Score")
+                Text("999")
+                Text("Round")
+                Text("999")
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Text("Info")
+                }
+            }
         
     }
 }
