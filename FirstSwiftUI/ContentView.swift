@@ -16,9 +16,9 @@ struct Obj {
 }
 struct ContentView: View {
     @State var obj = Obj()
-    @State var alertVisible : Bool = false
-    @State var sliderValue : Double = 10.0
-    @State var knockVisible : Bool = false
+    @State var alertVisible = false
+    @State var sliderValue = 10.0
+    @State var knockVisible = false
     @State var target = Int.random(in: 1...100)
     var body: some View {
         VStack {
@@ -45,8 +45,7 @@ struct ContentView: View {
                 Text("Hit me")
             }
             .alert(isPresented: $alertVisible) { () -> Alert in
-                let valueOfSlider = Int(sliderValue.rounded())
-                return Alert(title: Text("Hello There"), message: Text("The slider value is :\(valueOfSlider) Your current point is: \(pointsForCurrentRound())"), dismissButton: .default(Text("Awesome")))
+                return Alert(title: Text("Hello There"), message: Text("The slider value is :\(sliderValueRounded()) Your current point is: \(pointsForCurrentRound())"), dismissButton: .default(Text("Awesome")))
             }
             
             //Score row
@@ -68,10 +67,11 @@ struct ContentView: View {
     }
 }
     func pointsForCurrentRound() -> Int {
-        let roundedValue = Int(sliderValue.rounded())
-        let differences = abs(target - roundedValue)
-        let rewardedPoints = 100 - differences
-        return rewardedPoints
+        return 100 - abs(target - sliderValueRounded())
+    }
+    
+    func sliderValueRounded() -> Int {
+        return Int(sliderValue.rounded())
     }
 }
 
