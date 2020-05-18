@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D4B50152472C5F9000CFF5A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B50142472C5F9000CFF5A /* AboutView.swift */; };
 		4DD95CB4247035F400CDF4AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD95CB3247035F400CDF4AA /* AppDelegate.swift */; };
 		4DD95CB6247035F400CDF4AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD95CB5247035F400CDF4AA /* SceneDelegate.swift */; };
 		4DD95CB8247035F400CDF4AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD95CB7247035F400CDF4AA /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D4B50142472C5F9000CFF5A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		4DD95CB0247035F400CDF4AA /* FirstSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD95CB3247035F400CDF4AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DD95CB5247035F400CDF4AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				4DD95CB3247035F400CDF4AA /* AppDelegate.swift */,
 				4DD95CB5247035F400CDF4AA /* SceneDelegate.swift */,
 				4DD95CB7247035F400CDF4AA /* ContentView.swift */,
+				4D4B50142472C5F9000CFF5A /* AboutView.swift */,
 				4DD95CB9247035F500CDF4AA /* Assets.xcassets */,
 				4DD95CBE247035F500CDF4AA /* LaunchScreen.storyboard */,
 				4DD95CC1247035F500CDF4AA /* Info.plist */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D4B50152472C5F9000CFF5A /* AboutView.swift in Sources */,
 				4DD95CB4247035F400CDF4AA /* AppDelegate.swift in Sources */,
 				4DD95CB6247035F400CDF4AA /* SceneDelegate.swift in Sources */,
 				4DD95CB8247035F400CDF4AA /* ContentView.swift in Sources */,

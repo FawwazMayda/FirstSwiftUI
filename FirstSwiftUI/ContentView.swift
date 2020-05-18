@@ -110,15 +110,15 @@ struct ContentView: View {
                 Text("\(round)").modifier(ValueStyle())
                 Spacer()
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    
+                NavigationLink(destination: AboutView()) {
                     HStack{
                         Image("InfoIcon")
                         Text("Info").modifier(SmallButtonStyle())
                     }
+
                 }.background(Image("Button"))
             }.padding(.all, 20.0)
-            }.background(Image("Background"), alignment: .center).accentColor(midnightBlue)
+            }.background(Image("Background"), alignment: .center).accentColor(midnightBlue).navigationBarTitle(Text("Bulls Eye"))
 }
     func amountOff() -> Int {
         abs(target - sliderValueRounded())
