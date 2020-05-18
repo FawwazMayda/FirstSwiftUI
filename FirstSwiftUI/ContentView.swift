@@ -7,7 +7,10 @@
 //
 
 import SwiftUI
-
+// How to calculate the slider value
+// Get both value of slider and target
+// if target>slider : value = target-slider
+// else : value = slider-targer
 struct Obj {
     public var isVisible = true
 }
@@ -43,7 +46,7 @@ struct ContentView: View {
             }
             .alert(isPresented: $alertVisible) { () -> Alert in
                 let valueOfSlider = Int(sliderValue.rounded())
-                return Alert(title: Text("Hello There"), message: Text("The slider value is :\(valueOfSlider)"), dismissButton: .default(Text("Awesome")))
+                return Alert(title: Text("Hello There"), message: Text("The slider value is :\(valueOfSlider) Your current point is: \(pointsForCurrentRound())"), dismissButton: .default(Text("Awesome")))
             }
             
             //Score row
@@ -64,6 +67,17 @@ struct ContentView: View {
             }.padding(.all, 20.0)
     }
 }
+    func pointsForCurrentRound() -> Int {
+        let roundedValue = Int(sliderValue.rounded())
+        var rewardedPoints = 0
+        var differences = target - roundedValue
+        if differences < 0 {
+            differences = differences * -1
+        }
+        
+        rewardedPoints = 100 - differences
+        return rewardedPoints
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
