@@ -69,13 +69,8 @@ struct ContentView: View {
 }
     func pointsForCurrentRound() -> Int {
         let roundedValue = Int(sliderValue.rounded())
-        var rewardedPoints = 0
-        var differences = target - roundedValue
-        if differences < 0 {
-            differences = differences * -1
-        }
-        
-        rewardedPoints = 100 - differences
+        let differences = abs(target - roundedValue)
+        let rewardedPoints = 100 - differences
         return rewardedPoints
     }
 }
