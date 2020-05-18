@@ -71,7 +71,7 @@ struct ContentView: View {
                     Text("Info")
                 }
             }.padding(.all, 20.0)
-    }
+        }.background(Image("Background"), alignment: .center)
 }
     func amountOff() -> Int {
         abs(target - sliderValueRounded())
