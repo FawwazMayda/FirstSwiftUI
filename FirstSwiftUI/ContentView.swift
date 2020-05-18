@@ -22,23 +22,28 @@ struct ContentView: View {
     @State var target = Int.random(in: 1...100)
     @State var score = 0
     @State var round = 1
+    
+    struct LabelStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            content.foregroundColor(.white)
+                .shadow(color: .black, radius: 5, x: 2, y: 2)
+                .font(.custom("Arial Rounded MT Bold", size: 18.0))
+        }
+    }
     var body: some View {
         VStack {
             
             //Target Row
             HStack {
-                Text("Put the bulleye as close ad you can:")
-                    .foregroundColor(Color.white)
-                    .shadow(color: .black, radius: 5, x: 2, y: 2)
-                    .font(.custom("Arial Rounded MT Bold", size: 18.0))
+                Text("Put the bulleye as close ad you can:").modifier(LabelStyle())
                 Text("\(target)")
 
             }
             //Slider Row
             HStack {
-                Text("1")
+                Text("1").modifier(LabelStyle())
                 Slider(value: self.$sliderValue, in: 1...100)
-                Text("100")
+                Text("100").modifier(LabelStyle())
             }
             
             //Button Row
