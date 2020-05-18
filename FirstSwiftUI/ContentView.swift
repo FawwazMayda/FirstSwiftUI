@@ -28,6 +28,9 @@ struct ContentView: View {
             //Target Row
             HStack {
                 Text("Put the bulleye as close ad you can:")
+                    .foregroundColor(Color.white)
+                    .shadow(color: .black, radius: 5, x: 2, y: 2)
+                    .font(.custom("Arial Rounded MT Bold", size: 18.0))
                 Text("\(target)")
 
             }
